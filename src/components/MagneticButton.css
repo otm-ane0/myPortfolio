@@ -1,0 +1,82 @@
+.magnetic-button {
+  position: relative;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+  border: none;
+  border-radius: 50px;
+  color: #0a0a0a;
+  font-family: "Cinzel", serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 0.4, 0.25, 1);
+  box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
+}
+
+.magnetic-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.magnetic-button:hover::before {
+  opacity: 1;
+}
+
+.magnetic-button:hover {
+  box-shadow: 0 6px 25px rgba(0, 255, 136, 0.5);
+}
+
+.magnetic-button-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Secondary variant */
+.magnetic-button.secondary {
+  background: transparent;
+  border: 2px solid #00ff88;
+  color: #00ff88;
+  box-shadow: 0 4px 15px rgba(0, 255, 136, 0.2);
+}
+
+.magnetic-button.secondary:hover {
+  background: rgba(0, 255, 136, 0.1);
+  box-shadow: 0 6px 25px rgba(0, 255, 136, 0.4);
+}
+
+/* Outline variant */
+.magnetic-button.outline {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.magnetic-button.outline:hover {
+  border-color: #00ff88;
+  color: #00ff88;
+  box-shadow: 0 6px 25px rgba(0, 255, 136, 0.3);
+}
+
+/* Small size */
+.magnetic-button.small {
+  padding: 12px 24px;
+  font-size: 14px;
+}
+
+/* Large size */
+.magnetic-button.large {
+  padding: 20px 40px;
+  font-size: 18px;
+}

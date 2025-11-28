@@ -1,0 +1,82 @@
+.experience-section {
+  min-height: 100vh;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+.experience-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(0, 255, 136, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 204, 106, 0.05) 0%, transparent 50%),
+    rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(2px);
+  pointer-events: none;
+}
+
+.experience-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(135deg, transparent 0%, rgba(0, 255, 136, 0.02) 50%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Custom scrollbar for smooth scrolling */
+.experience-section::-webkit-scrollbar {
+  width: 6px;
+}
+
+.experience-section::-webkit-scrollbar-track {
+  background: rgba(0, 255, 136, 0.1);
+  border-radius: 3px;
+}
+
+.experience-section::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #00ff88, #00cc6a);
+  border-radius: 3px;
+}
+
+.experience-section::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #00cc6a, #00aa55);
+}
+
+/* Enhanced animations for timeline cards */
+@keyframes cardGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(0, 255, 136, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.4), 0 0 30px rgba(0, 255, 136, 0.2);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .experience-section {
+    padding: 20px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 15px 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-section {
+    padding: 10px 5px;
+  }
+}

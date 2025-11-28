@@ -1,0 +1,45 @@
+.custom-cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: #00ff88;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 99999;
+  mix-blend-mode: difference;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.custom-cursor-circle {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #00ff88;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 99998;
+  mix-blend-mode: difference;
+  transition: border-color 0.2s ease;
+}
+
+.custom-cursor-circle.hovering {
+  border-color: #ffffff;
+  border-width: 3px;
+}
+
+.custom-cursor-circle.clicking {
+  border-color: #ff6b6b;
+}
+
+/* Hide custom cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor-dot,
+  .custom-cursor-circle {
+    display: none;
+  }
+}
+
+/* Make all interactive elements have cursor: pointer for detection */
+a, button, [role="button"], .clickable {
+  cursor: pointer;
+}

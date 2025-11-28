@@ -1,0 +1,267 @@
+/* Intro wrapper */
+.intro-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Dark background */
+.intro-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    #0a0a0a 0%,
+    #000000 100%
+  );
+  z-index: 1;
+}
+
+/* Vortex container */
+.vortex-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+/* Vortex particles */
+.vortex-particle {
+  position: absolute;
+  background: radial-gradient(
+    circle,
+    rgba(0, 255, 136, 1) 0%,
+    rgba(0, 200, 100, 0.8) 50%,
+    rgba(0, 255, 136, 0.3) 100%
+  );
+  border-radius: 50%;
+  filter: blur(1px);
+  box-shadow: 
+    0 0 15px rgba(0, 255, 136, 0.8),
+    0 0 30px rgba(0, 255, 136, 0.5),
+    0 0 45px rgba(0, 255, 136, 0.3);
+}
+
+/* Light trails - REMOVED */
+
+/* Text container */
+.intro-text-container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.intro-text {
+  display: flex;
+  gap: 8px;
+  perspective: 1000px;
+}
+
+.intro-letter {
+  font-family: "Cinzel", serif;
+  font-size: clamp(5rem, 15vw, 12rem);
+  font-weight: 900;
+  color: #ffffff;
+  display: inline-block;
+  transform-style: preserve-3d;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #00ff88 50%,
+    #00dd77 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.5));
+}
+
+.intro-subtitle-modern {
+  font-family: "Cinzel", serif;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-weight: 300;
+  color: rgba(0, 255, 136, 0.8);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+/* Portal opening */
+.portal-opening {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 15;
+  pointer-events: none;
+}
+
+/* Portal door halves */
+.portal-door {
+  position: fixed;
+  width: 50vw;
+  height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    #000000 0%,
+    #0a1a0a 50%,
+    #000000 100%
+  );
+  top: 0;
+  z-index: 16;
+}
+
+.portal-door-left {
+  left: 50%;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    to right,
+    #000000 0%,
+    #0a1a0a 80%,
+    rgba(0, 255, 136, 0.1) 95%,
+    rgba(0, 255, 136, 0.2) 100%
+  );
+  box-shadow: 
+    inset -30px 0 80px rgba(0, 255, 136, 0.2),
+    5px 0 30px rgba(0, 255, 136, 0.3);
+}
+
+.portal-door-right {
+  right: 50%;
+  transform: translateX(100%);
+  background: linear-gradient(
+    to left,
+    #000000 0%,
+    #0a1a0a 80%,
+    rgba(0, 255, 136, 0.1) 95%,
+    rgba(0, 255, 136, 0.2) 100%
+  );
+  box-shadow: 
+    inset 30px 0 80px rgba(0, 255, 136, 0.2),
+    -5px 0 30px rgba(0, 255, 136, 0.3);
+}
+
+/* Light glow from behind doors */
+.door-light-glow {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 255, 136, 0.4) 0%,
+    rgba(0, 255, 136, 0.2) 30%,
+    transparent 70%
+  );
+  z-index: 15;
+  pointer-events: none;
+}
+
+/* Green flash */
+.green-flash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 255, 136, 0.8) 0%,
+    rgba(0, 255, 136, 0.5) 40%,
+    transparent 70%
+  );
+  z-index: 20;
+  pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .intro-letter {
+    font-size: clamp(3rem, 18vw, 7rem);
+    gap: 4px;
+  }
+
+  .intro-subtitle-modern {
+    font-size: clamp(0.8rem, 3vw, 1.2rem);
+    letter-spacing: 0.2em;
+  }
+
+  .vortex-particle {
+    width: 2px !important;
+    height: 2px !important;
+  }
+
+  .door-light-glow {
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-letter {
+    font-size: clamp(2.5rem, 20vw, 5rem);
+  }
+
+  .intro-subtitle-modern {
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    padding: 0 20px;
+  }
+
+  .door-light-glow {
+    opacity: 0.6;
+  }
+}
+
+/* Smooth animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}

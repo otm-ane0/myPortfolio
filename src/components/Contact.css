@@ -1,0 +1,347 @@
+/* Contact Section */
+.contact-section {
+  padding: 80px 20px;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Contact Header */
+.contact-header {
+  text-align: center;
+  margin-bottom: 60px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.contact-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.contact-title .highlight {
+  color: #00ff88;
+  text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+}
+
+.contact-description {
+  font-size: 1.2rem;
+  color: #ffffff;
+  max-width: 700px;
+  margin: 0 auto 15px auto;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.contact-subdescription {
+  font-size: 1.1rem;
+  color: #b0b0b0;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Contact Button Container */
+.contact-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 50px;
+  background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+  border: 2px solid rgba(0, 255, 136, 0.3);
+  border-radius: 50px;
+  color: #000000;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.4);
+}
+
+.contact-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.contact-button:hover::before {
+  width: 400px;
+  height: 400px;
+}
+
+.contact-button:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 20px 50px rgba(0, 255, 136, 0.6);
+  border-color: rgba(0, 255, 136, 0.8);
+}
+
+.button-text {
+  position: relative;
+  z-index: 1;
+}
+
+.button-arrow {
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.contact-button:hover .button-arrow {
+  transform: translateX(10px);
+}
+
+
+
+/* Contact Cards Grid */
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.contact-card {
+  background: rgba(20, 20, 20, 0.8);
+  border: 2px solid rgba(0, 255, 136, 0.2);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.contact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 200, 255, 0.1));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+.contact-card:hover::before {
+  opacity: 1;
+}
+
+.contact-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(0, 255, 136, 0.6);
+  box-shadow: 0 20px 40px rgba(0, 255, 136, 0.2);
+}
+
+/* Contact Icon */
+.contact-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #00ff88;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.4s ease;
+}
+
+.contact-card:hover .contact-icon {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* WhatsApp specific */
+.contact-card.whatsapp:hover .contact-icon {
+  color: #25D366;
+}
+
+.contact-card.whatsapp:hover {
+  border-color: rgba(37, 211, 102, 0.6);
+}
+
+/* Email specific */
+.contact-card.email:hover .contact-icon {
+  color: #EA4335;
+}
+
+.contact-card.email:hover {
+  border-color: rgba(234, 67, 53, 0.6);
+}
+
+/* Location specific */
+.contact-card.location .contact-icon {
+  color: #FF6B6B;
+}
+
+.contact-card.location:hover {
+  border-color: rgba(255, 107, 107, 0.6);
+}
+
+/* Country specific */
+.contact-card.country .contact-icon {
+  color: #4ECDC4;
+}
+
+.contact-card.country .morocco-flag {
+  width: 100px;
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.contact-card.country:hover .morocco-flag {
+  filter: drop-shadow(0 6px 12px rgba(193, 39, 45, 0.5));
+}
+
+.contact-card.country:hover {
+  border-color: rgba(193, 39, 45, 0.6);
+}
+
+/* Contact Card Text */
+.contact-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 15px 0 10px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-card p {
+  font-size: 1rem;
+  color: #b0b0b0;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contact-card.email p {
+  font-size: 0.95rem;
+  word-break: break-all;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 60px 20px;
+  }
+
+  .contact-header {
+    margin-bottom: 40px;
+  }
+
+  .contact-title {
+    font-size: 2rem;
+  }
+
+  .contact-description {
+    font-size: 1.05rem;
+  }
+
+  .contact-subdescription {
+    font-size: 1rem;
+  }
+
+  .contact-button {
+    padding: 18px 35px;
+    font-size: 1.1rem;
+    gap: 10px;
+  }
+
+  .button-arrow {
+    font-size: 1.2rem;
+  }
+
+  .contact-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .contact-card {
+    padding: 30px 20px;
+  }
+
+  .contact-icon {
+    font-size: 2.5rem;
+  }
+
+  .contact-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .contact-card p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 40px 15px;
+  }
+
+  .contact-title {
+    font-size: 1.8rem;
+  }
+
+  .contact-description {
+    font-size: 1rem;
+  }
+
+  .contact-subdescription {
+    font-size: 0.95rem;
+  }
+
+  .contact-button {
+    padding: 15px 30px;
+    font-size: 1rem;
+  }
+
+  .button-text {
+    font-size: 1rem;
+  }
+
+  .contact-card {
+    padding: 25px 15px;
+  }
+}

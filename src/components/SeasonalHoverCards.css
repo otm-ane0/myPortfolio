@@ -1,0 +1,164 @@
+/* SeasonalHoverCards styles - converts the Tailwind layout to plain CSS */
+.seasonal-section {
+  padding: 100px 0;
+  background: linear-gradient(180deg, rgba(10,12,14,0.9) 0%, rgba(15,20,25,0.95) 100%);
+  position: relative;
+}
+
+.seasonal-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Service Header */
+.service-header {
+  text-align: center;
+  margin-bottom: 60px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 16px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.service-title .highlight {
+  background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.service-description {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.seasonal-wrapper {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.season-item {
+  flex: 1 1 calc(33.333% - 16px);
+  min-width: 260px;
+  max-width: 480px;
+}
+
+.season-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  height: 350px;
+  background: #0f1419;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.02);
+  transition: all 0.5s ease;
+}
+
+/* larger card on hover for wide screens */
+@media (min-width: 768px) {
+  .season-card:hover {
+    transform: scale(1.03);
+  }
+}
+
+.season-card-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.season-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.75) 80%);
+}
+
+.season-card-content {
+  position: relative;
+  z-index: 2;
+}
+
+.season-card-header {
+  position: relative;
+}
+
+.season-card-title {
+  font-size: 1.25rem;
+  color: #fff;
+  margin: 0 0 6px 0;
+  letter-spacing: 0.02em;
+}
+
+.season-card-subtitle {
+  font-size: 0.9rem;
+  color: #00ff88;
+  margin: 0 0 12px 0;
+  font-weight: 600;
+}
+
+.season-card-desc {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: all 0.5s ease;
+}
+
+/* reveal description on hover */
+.season-card:hover .season-card-desc,
+.season-card:focus-within .season-card-desc {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* gentle image pan on hover */
+.season-card:hover .season-card-image {
+  transform: scale(1.08) translateY(-6%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .season-item {
+    flex: 1 1 calc(50% - 16px);
+  }
+}
+
+@media (max-width: 600px) {
+  .season-item {
+    flex: 1 1 100%;
+  }
+  .season-card {
+    height: 300px;
+    padding: 20px;
+  }
+}
